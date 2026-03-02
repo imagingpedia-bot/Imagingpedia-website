@@ -43,7 +43,11 @@ app.use(
       }
 
       const isRailwayApp = /^https:\/\/[a-z0-9-]+\.up\.railway\.app$/i.test(origin);
-      if (allowedOrigins.has(origin) || isRailwayApp) {
+      const isVercelApp = /^https:\/\/[a-z0-9-]+\.vercel\.app$/i.test(origin);
+      const isRenderApp = /^https:\/\/[a-z0-9-]+\.onrender\.com$/i.test(origin);
+      const isNetlifyApp = /^https:\/\/[a-z0-9-]+\.netlify\.app$/i.test(origin);
+
+      if (allowedOrigins.has(origin) || isRailwayApp || isVercelApp || isRenderApp || isNetlifyApp) {
         callback(null, true);
         return;
       }

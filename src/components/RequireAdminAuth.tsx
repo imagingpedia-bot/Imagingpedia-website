@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || "http://localhost:3000").replace(/\/+$/, "");
+import { API_BASE_URL } from "@/lib/config";
 
 interface RequireAdminAuthProps {
   children: React.ReactNode;

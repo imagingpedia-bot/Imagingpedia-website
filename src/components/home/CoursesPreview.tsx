@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { Clock, BookOpen, Users, Star, ArrowRight, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-
-const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || "http://localhost:3000").replace(/\/+$/, "");
+import { API_BASE_URL } from "@/lib/config";
 
 interface Course {
   id: number;
