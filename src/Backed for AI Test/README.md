@@ -61,6 +61,28 @@ npm run dev
 
 Server runs on http://localhost:3000
 
+## Deploy Backend on Railway
+
+Your repository contains both frontend and backend. Railway may auto-detect the frontend root (`bun.lockb`, Vite) unless you point the service to the backend folder.
+
+### 1. Create a dedicated Railway service for backend
+- In Railway service settings, set **Root Directory** to:
+  `src/Backed for AI Test/ai-lms-backend`
+- Keep `railway.toml` in this folder (already added).
+
+### 2. Set environment variables in Railway
+- `DATABASE_URL` = your Railway Postgres connection string
+- `OPENROUTER_API_KEY` = your OpenRouter key
+- Optional: `DB_SSL=false` only if your database does not require SSL
+
+### 3. Deploy behavior
+- Build command: `npm install`
+- Start command: `npm start`
+- App binds to `process.env.PORT` automatically.
+
+### 4. Fix the lockfile error you saw
+If Railway is still running `bun install --frozen-lockfile`, it is building the wrong directory (frontend root). Re-check the backend service Root Directory above.
+
 ## API Endpoints
 
 ### POST /submission

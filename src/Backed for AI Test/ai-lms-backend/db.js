@@ -2,17 +2,22 @@ import pkg from 'pg';
 
 const {Pool} =pkg;
 
-export const pool=new Pool({
-    user:"postgres",
-    host:"localhost",
-    database:"lms",
-    password:"chatur",
-    port:5432,
-}) ;
-// export const pool = new Pool({
-//   connectionString: process.env.DATABASE_URL,
-//   ssl: { rejectUnauthorized: false },
-// });
+const hasDatabaseUrl = Boolean(process.env.DATABASE_URL);
+
+const sslEnabled = (process.env.DB_SSL || "true").toLowerCase() !== "false";
+
+export const pool = hasDatabaseUrl
+    ? new Pool({
+        connectionString: process.env.DATABASE_URL,
+        ssl: sslEnabled ? { rejectUnauthorized: false } : false,
+    })
+    : new Pool({
+        user: process.env.DB_USER || "postgres",
+        host: process.env.DB_HOST || "localhost",
+        database: process.env.DB_NAME || "lms",
+        password: process.env.DB_PASSWORD || "postgres",
+        port: Number(process.env.DB_PORT || 5432),
+    });
 
 
 pool.on("connect", () => {
