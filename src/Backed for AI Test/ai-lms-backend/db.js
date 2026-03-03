@@ -15,15 +15,21 @@ export const pool = hasDatabaseUrl
         user: process.env.DB_USER || "postgres",
         host: process.env.DB_HOST || "localhost",
         database: process.env.DB_NAME || "lms",
-        password: process.env.DB_PASSWORD || "postgres",
+        password: process.env.DB_PASSWORD || "chatur",
         port: Number(process.env.DB_PORT || 5432),
     });
 
+// export const pool=new Pool({
+//     user:"postgres",
+//     host:"localhost",
+//     database:"lms",
+//     password:"chatur",
+//     port:5432,
+// }) ;
 
 pool.on("connect", () => {
  console.log("PostgreSQL connected");
 });
-
 // Test connection on startup
 pool.query('SELECT NOW()')
     .then(() => console.log('Database connection successful'))

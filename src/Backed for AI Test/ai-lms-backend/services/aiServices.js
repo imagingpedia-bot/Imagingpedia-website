@@ -86,7 +86,7 @@ IMPORTANT: Return ONLY the JSON object, nothing else. No markdown, no code block
     const response = await axios.post(
       OPENROUTER_API_URL,
       {
-        model: "gpt-4o-mini",
+        model: "openai/gpt-4o-mini",
         messages: [
           {
             role: "user",
