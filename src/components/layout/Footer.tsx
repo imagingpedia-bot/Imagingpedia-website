@@ -5,21 +5,18 @@ export const Footer = () => {
   return (
     <footer className="bg-card/50 border-t border-border/50 pt-16 pb-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
           {/* Brand Column */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-2">
-              {/* <div className="w-10 h-10 rounded-lg bg-primary/20 border border-primary/30 flex items-center justify-center">
-                <span className="text-primary font-display font-bold text-xl">I</span>
-              </div> */}
-                <div className="w-14 h-14 flex items-center justify-center">
-            {/* <span className="text-primary font-display font-bold text-xl">I</span> */}
+           
+          {/* <div className="w-14 h-14 flex items-center justify-center">
             <img 
               src="/logo.png" 
               alt="logo" 
               className="w-full h-full object-contain"
             />
-          </div>
+          </div>  */}
+          <Link to="/" className="flex items-center gap-2">
               <span className="font-display text-xl font-semibold text-foreground "style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
                 Imaging<span className="text-primary">pedia</span>
               </span>
@@ -48,13 +45,18 @@ export const Footer = () => {
           <div>
             <h4 className="font-display font-semibold text-foreground mb-4">Quick Links</h4>
             <ul className="space-y-3">
-              {["Courses", "About Us", "Pricing", "Contact"].map((item) => (
-                <li key={item}>
+              {[
+                { label: "Courses", to: "/courses" },
+                { label: "About Us", to: "/about" },
+                { label: "Tests", to: "/tests" },
+                { label: "Contact", to: "/contact" },
+              ].map((item) => (
+                <li key={item.label}>
                   <Link
-                    to={`/${item.toLowerCase().replace(" ", "-")}`}
+                    to={item.to}
                     className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -62,7 +64,7 @@ export const Footer = () => {
           </div>
 
           {/* Courses */}
-          <div>
+          {/* <div>
             <h4 className="font-display font-semibold text-foreground mb-4">Popular Courses</h4>
             <ul className="space-y-3">
               {["Radiology Fundamentals", "Anatomy Essentials", "Medical Imaging", "Diagnostic Sciences"].map((item) => (
@@ -76,7 +78,7 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Contact */}
           <div>
