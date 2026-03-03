@@ -4,7 +4,7 @@
 // import OpenAI from "openai";
 
 // const deepseek = new OpenAI({
-//  apiKey: "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",
+//  apiKey: "YOUR_OPENROUTER_API_KEY",
 //  baseURL: "https://api.deepseek.com"
 // });
 
