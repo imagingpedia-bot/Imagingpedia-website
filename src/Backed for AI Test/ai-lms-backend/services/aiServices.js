@@ -47,8 +47,8 @@ dotenv.config();
 import axios from "axios";
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
-//const OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions";
-const OPENROUTER_API_URL = "https://uncapitalised-nonmiraculously-jessia.ngrok-free.dev"
+const OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions";
+//const OPENROUTER_API_URL = "https://uncapitalised-nonmiraculously-jessia.ngrok-free.dev"
 
 export async function evaluate(model, student, marks) {
   try {
@@ -87,8 +87,8 @@ IMPORTANT: Return ONLY the JSON object, nothing else. No markdown, no code block
     const response = await axios.post(
       OPENROUTER_API_URL,
       {
-        //model: "openai/gpt-4o-mini",
-        model:"qwen",
+        model: "openai/gpt-4o-mini",
+        //model:"qwen",
         messages: [
           {
             role: "user",
