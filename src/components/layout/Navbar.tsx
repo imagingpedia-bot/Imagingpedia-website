@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { isAuthenticated, getCurrentUser, logout } from "@/lib/auth";
 import { toast } from "@/hooks/use-toast";
+import Logo from "@/assets/Untitled (5).png";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -79,7 +80,7 @@ export const Navbar = () => {
           </div> */}
           <div className="w-16 h-16 flex items-center justify-center">
             <img 
-              src="src/assets/Untitled (5).png" 
+              src={Logo} 
               alt="logo" 
               className="w-full h-full object-contain"
             />
