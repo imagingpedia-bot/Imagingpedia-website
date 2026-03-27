@@ -85,8 +85,8 @@ export const Navbar = () => {
               className="w-full h-full object-contain"
             />
           </div>
-          <span className="font-display text-3xl font-semibold text-foreground" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
-            Imaging<span className="text-primary">pedia</span>
+          <span className="font-display text-3xl font-semibold text-foreground" style={{ fontFamily: 'Codec Pro, sans-serif', fontWeight: 600 }}>
+            Imaging<span className="gradient-text">pedia</span>
           </span>
         </Link>
 
