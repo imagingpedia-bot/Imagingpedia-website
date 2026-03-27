@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
+import Logo from "@/assets/Untitled (5).png";
 
 export const Footer = () => {
   return (
@@ -8,17 +9,16 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
           {/* Brand Column */}
           <div className="space-y-4">
-           
-          {/* <div className="w-14 h-14 flex items-center justify-center">
-            <img 
-              src="/logo.png" 
-              alt="logo" 
-              className="w-full h-full object-contain"
-            />
-          </div>  */}
-          <Link to="/" className="flex items-center gap-2">
-              <span className="font-display text-xl font-semibold text-foreground "style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
-                Imaging<span className="text-primary">pedia</span>
+            <Link to="/" className="flex items-center gap-2 w-fit">
+              <div className="w-12 h-12 flex items-center justify-center">
+                <img 
+                  src={Logo}
+                  alt="logo" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <span className="font-display text-xl font-semibold text-foreground" style={{ fontFamily: 'Codec Pro, sans-serif', fontWeight: 600 }}>
+                Imaging<span className="gradient-text">pedia</span>
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
