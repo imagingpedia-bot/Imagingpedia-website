@@ -73,19 +73,18 @@ export const Navbar = () => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          {/* <div className="w-10 h-10 rounded-lg bg-primary/20 border border-primary/30 flex items-center justify-center">
+       {/* <div className="w-10 h-10 rounded-lg bg-primary/20 border border-primary/30 flex items-center justify-center">
              <span className="text-primary font-display font-bold text-xl">I</span>
             <img src="/Logo_3-removebg-preview.png" alt="logo" />
           </div> */}
-             {/* <div className="w-20 h-20 flex items-center justify-center"> */}
-            {/* <span className="text-primary font-display font-bold text-xl">I</span> */}
-            {/* <img 
-              src="/logo.png" 
+          <div className="w-16 h-16 flex items-center justify-center">
+            <img 
+              src="src/assets/Untitled (5).png" 
               alt="logo" 
               className="w-full h-full object-contain"
             />
-          </div> */}
-          <span className="font-display text-2xl font-semibold text-foreground" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
+          </div>
+          <span className="font-display text-3xl font-semibold text-foreground" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
             Imaging<span className="text-primary">pedia</span>
           </span>
         </Link>

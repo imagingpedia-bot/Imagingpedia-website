@@ -265,4 +265,16 @@
   .link-underline:hover::after {
     @apply w-full;
   }
+  .gradient-text {
+  background: linear-gradient(
+    90deg,
+    #032b5c 0%,
+    #76ded1 50%,
+    #032b5c 100%
+  );
+  
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 }
