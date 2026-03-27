@@ -269,9 +269,9 @@
   .gradient-text {
   background: linear-gradient(
     90deg,
-    #032b5c 0%,
+    #2e6e87 0%,
     #76ded1 50%,
-    #032b5c 100%
+    #2e6e87 100%
   );
   
   background-clip: text;
