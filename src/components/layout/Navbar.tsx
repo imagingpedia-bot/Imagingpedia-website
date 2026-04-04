@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { isAuthenticated, getCurrentUser, logout } from "@/lib/auth";
@@ -11,10 +11,10 @@ import Logo from "@/assets/Untitled (5).png";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Image Guided Procedures", path: "/courses" },
-  // { name: "Question Banks", path: "/tests" },
   { name: "Question Banks", path: "/practice-test" },
   { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },
+  { name: "Exam Tracks", path: "/start-test" },
 ];
 
 export const Navbar = () => {
@@ -67,18 +67,14 @@ export const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "glass py-3"
+          ? "bg-slate-950/55 backdrop-blur-md py-4"
           : "bg-transparent py-5"
       )}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 flex items-center justify-between gap-6">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-       {/* <div className="w-10 h-10 rounded-lg bg-primary/20 border border-primary/30 flex items-center justify-center">
-             <span className="text-primary font-display font-bold text-xl">I</span>
-            <img src="/Logo_3-removebg-preview.png" alt="logo" />
-          </div> */}
-          <div className="w-16 h-16 flex items-center justify-center">
+        <Link to="/" className="flex items-center gap-2 md:gap-3">
+          <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center">
             <img 
               src={Logo} 
               alt="logo" 
@@ -91,24 +87,21 @@ export const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center rounded-full border border-cyan-200/15 bg-slate-900/35 backdrop-blur-xl p-1 shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_12px_40px_rgba(0,0,0,0.25)]">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               className={cn(
-                "text-sm font-medium transition-colors link-underline",
+                "rounded-full px-7 py-2 text-base font-semibold transition-all duration-200",
                 location.pathname === link.path
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "bg-[#23d3c8] text-slate-950 shadow-[0_8px_22px_rgba(35,211,200,0.42)]"
+                  : "text-slate-200/85 hover:text-white"
               )}
             >
               {link.name}
             </Link>
           ))}
-          <Button asChild size="sm" className="ml-2">
-            <Link to="/start-test">Exam Tracks</Link>
-          </Button>
         </nav>
 
         {/* Desktop CTA */}
@@ -131,7 +124,7 @@ export const Navbar = () => {
               </Button>
             </>
           )} */}
-          <Button variant="ghost" size="sm" asChild className="text-xs">
+          <Button variant="ghost" size="sm" asChild className="rounded-full bg-[#23d3c8] hover:bg-[#2e6e87] text-slate-950  text-xs px-4">
             <Link to="/admin/login">Admin</Link>
           </Button>
         </div>
@@ -153,7 +146,7 @@ export const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-border/50"
+            className="md:hidden bg-slate-950/85 backdrop-blur-xl border-t border-cyan-100/10"
           >
             <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -161,18 +154,15 @@ export const Navbar = () => {
                   key={link.path}
                   to={link.path}
                   className={cn(
-                    "text-base font-medium py-2 transition-colors",
+                    "text-base font-semibold py-2 transition-colors",
                     location.pathname === link.path
-                      ? "text-primary"
-                      : "text-muted-foreground"
+                      ? "text-[#23d3c8]"
+                      : "text-slate-200/85"
                   )}
                 >
                   {link.name}
                 </Link>
               ))}
-              <Button asChild className="w-full mt-2">
-                <Link to="/start-test">Exam Tracks</Link>
-              </Button>
               <div className="flex flex-col gap-3 pt-4 border-t border-border/50">
                 {/* {authed ? (
                   <>
@@ -193,7 +183,7 @@ export const Navbar = () => {
                     </Button>
                   </>
                 )} */}
-                <Button variant="ghost" asChild className="w-full text-xs">
+                <Button variant="ghost" asChild className="w-full text-xs rounded-full bg-[#23d3c8] hover:bg-[#37dfd4] text-slate-950 shadow-[0_8px_22px_rgba(35,211,200,0.42)]">
                   <Link to="/admin/login">Admin Login</Link>
                 </Button>
               </div>
