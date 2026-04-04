@@ -82,8 +82,8 @@ const Contact = () => {
                     <p className="text-muted-foreground text-sm mb-2">
                       We usually respond within 24 hours.
                     </p>
-                    <a href="mailto:support@imagingpedia.com" className="text-primary hover:underline">
-                      support@imagingpedia.com
+                    <a href="mailto:imagingpedia@gmail.com" className="text-primary hover:underline">
+                      imagingpedia@gmail.com
                     </a>
                   </motion.div>
 
@@ -98,10 +98,10 @@ const Contact = () => {
                     </div>
                     <h3 className="font-display font-semibold text-foreground mb-2">Phone</h3>
                     <p className="text-muted-foreground text-sm mb-2">
-                      Mon-Fri from 9am to 6pm EST
+                      Mon-Fri from 9am to 6pm IST
                     </p>
                     <a href="tel:+15551234567" className="text-primary hover:underline">
-                      +1 (555) 123-4567
+                      +91 89042 79555
                     </a>
                   </motion.div>
 
@@ -116,9 +116,9 @@ const Contact = () => {
                     </div>
                     <h3 className="font-display font-semibold text-foreground mb-2">Office</h3>
                     <p className="text-muted-foreground text-sm">
-                      123 Medical Center Drive<br />
-                      Healthcare City, HC 10001<br />
-                      United States
+                      1st cross, behind hotel sharavati,<br />
+                      nehrunagar, belgavi 590010,<br />
+                      Karnataka, India
                     </p>
                   </motion.div>
                 </div>

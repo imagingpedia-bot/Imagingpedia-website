@@ -17,11 +17,6 @@ const values = [
     description: "Making world-class medical education accessible to healthcare professionals worldwide.",
   },
   {
-    icon: Award,
-    title: "Industry Recognition",
-    description: "Our courses are recognized by leading medical institutions and professional bodies.",
-  },
-  {
     icon: Heart,
     title: "Student Success",
     description: "We're committed to the success of every student, providing support at every step.",
@@ -74,12 +69,12 @@ const About = () => {
                   About Us
                 </span>
                 <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-                  Advancing Medical Education{" "}
+                  Advancing Radiology Education{" "}
                   <span className="text-gradient">Globally</span>
                 </h1>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Founded in 2020, Imagingpedia has grown to become a leading platform for medical 
-                  imaging education. Our mission is to make high-quality medical education 
+                  Founded in 2020, Imagingpedia has grown to become a leading platform for radiology 
+                  imaging education. Our mission is to make high-quality radiology education 
                   accessible to healthcare professionals around the world.
                 </p>
               </motion.div>
@@ -132,10 +127,10 @@ const About = () => {
                 </p>
               </motion.div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {values.map((value, index) => (
                   <motion.div
-                    key={index}
+                    key={index} 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
